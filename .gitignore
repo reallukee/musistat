@@ -1,0 +1,8 @@
+# Windows
+[Dd]esktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
