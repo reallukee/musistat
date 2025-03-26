@@ -38,6 +38,12 @@
       <div id="navbar" class="collapse navbar-collapse mt-3 mt-lg-0">
         <ul class="navbar-nav">
           <li class="nav-item">
+            <a href="./me.html" id="navbarMe" class="nav-link">
+              Me
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="./tracks.html" id="navbarTracks" class="nav-link active">
               Top Tracks
             </a>
@@ -53,11 +59,11 @@
         <div class="mx-auto"></div>
 
         <div class="d-flex">
-          <button type="button" id="login" class="btn btn-success">
+          <button type="button" id="login" class="btn btn-success mt-3 mt-lg-0">
             Login
           </button>
 
-          <button type="button" id="logout" class="btn btn-danger">
+          <button type="button" id="logout" class="btn btn-danger mt-3 mt-lg-0">
             Logout
           </button>
         </div>
@@ -101,7 +107,7 @@
   -->
   <main class="container col-12 col-lg-6 my-5" id="loggedContent">
 
-    <div class="row row-cols-1 row-cols-lg-2 gx-lg-5 gy-5">
+    <div class="row row-cols-1 row-cols-lg-2 gx-3 gy-5 gx-lg-5 gy-lg-5">
       <div class="col">
         <label for="timeRange" class="form-label">
           Time range
@@ -129,7 +135,7 @@
 
     <div class="my-5"></div>
 
-    <div class="row row-cols-1 row-cols-lg-1 gx-lg-5 gy-5" id="pageContent">
+    <div class="row row-cols-1 row-cols-lg-1 gx-3 gy-5 gx-lg-5 gy-lg-5" id="pageContent">
       <div class="col">
         <div class="alert alert-info p-5">
           <h3 class="fs-3 m-0 p-0 text-center">
@@ -165,19 +171,19 @@
         <% const track = tracks[i]; %>
 
         <div class="col">
-          <div class="row align-items-center g-5">
+          <div class="row align-items-center gx-3 gy-5 gx-lg-5 gy-lg-5">
 
-            <div class="col-auto">
-              <h3 class="fs-3 m-0 p-0">
+            <div class="col-12 col-lg-auto">
+              <h3 class="fs-3 font-monospace m-0 p-0">
                 <%= (i + 1).toString().padStart(2, "0") + "."; %>
               </h3>
             </div>
 
-            <div class="col-auto">
-              <img src="<%= track.album.images[0].url %>" class="img img-fluid" />
+            <div class="col-12 col-lg-auto">
+              <img src="<%= track.album.images[0].url %>" class="img img-sm img-fluid" />
             </div>
 
-            <div class="col">
+            <div class="col-12 col-lg">
               <div class="row align-items-center g-1">
                 <div class="col-12">
                   <h3 class="fs-3 m-0 p-0">
@@ -205,8 +211,8 @@
               </div>
             </div>
 
-            <div class="col-auto">
-              <a href="<%= track.external_urls.spotify; %>" class="link-success" target="_blank">
+            <div class="col-12 col-lg-auto">
+              <a href="<%= track.external_urls.spotify; %>" class="btn btn-success" target="_blank">
                 Spotify
               </a>
             </div>
@@ -216,7 +222,7 @@
       <% } %>
 
       <div class="col">
-        <a href="#options" class="link-success">
+        <a href="#options" class="btn btn-outline-secondary">
           Top
         </a>
       </div>
@@ -234,10 +240,10 @@
     UNLOGGED MAIN BAGIN
   -->
   <main class="container col-12 col-lg-6 mt-auto" id="unloggedContent">
-    <div class="row justify-content-center gx-lg-3 gy-3">
+    <div class="row justify-content-center gx-3 gy-3 gx-lg-3 gy-lg-3">
 
       <div class="col-12">
-        <div class="row justify-content-center gx-lg-5 gy-5">
+        <div class="row justify-content-center gx-3 gy-5 gx-lg-5 gy-lg-5">
           <div class="col-auto">
             <h6 class="display-6 m-0 p-0">
               <span class="fw-bold">
@@ -249,7 +255,7 @@
       </div>
 
       <div class="col-12">
-        <div class="row justify-content-center gx-lg-5 gy-5">
+        <div class="row justify-content-center gx-3 gy-5 gx-lg-5 gy-lg-5">
           <div class="col-auto">
             <h3 class="display-6">
               You are not logged!
@@ -261,7 +267,7 @@
       <div class="my-3"></div>
 
       <div class="col-12">
-        <div class="row justify-content-center gx-lg-5 gy-5">
+        <div class="row justify-content-center gx-3 gy-5 gx-lg-5 gy-lg-5">
           <div class="col-auto">
             <button type="button" id="homeLogin" class="btn btn-lg btn-success">
               Login with Spotify now!
@@ -283,7 +289,7 @@
     <div class="container col-12 col-lg-8 my-auto py-auto">
       <div class="row g-3">
 
-        <div class="col-auto">
+        <div class="col-12 col-lg-auto">
           <a href="./" class="link-success">
             MusiStat!
           </a>
@@ -291,7 +297,7 @@
 
         <div class="col"></div>
 
-        <div class="col-auto">
+        <div class="col-12 col-lg-auto">
           Made with ❤️ by <a href="https://github.com/reallukee" class="link-success" target="_blank">Reallukee</a>
         </div>
 

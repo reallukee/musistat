@@ -1,10 +1,36 @@
 .img {
+    object-fit: cover;
+
+    pointer-events: none;
+}
+
+.circle {
+    border-radius: 100%;
+}
+
+.img-sm {
     width: 100px;
-    min-width: 100px;
+    min-width: auto;
     max-width: 100px;
     height: 100px;
-    min-height: 100px;
+    min-height: auto;
     max-height: 100px;
+}
 
-    object-fit: cover;
+.img-md {
+    width: 175px;
+    min-width: auto;
+    max-width: 175px;
+    height: 175px;
+    min-height: auto;
+    max-height: 175px;
+}
+
+.img-lg {
+    width: 250px;
+    min-width: auto;
+    max-width: 250px;
+    height: 250px;
+    min-height: auto;
+    max-height: 250px;
 }
