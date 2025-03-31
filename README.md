@@ -2,7 +2,7 @@
 
 🎶 Your Spotify tops and data in one place!
 
-> Try [here](https://reallukee.github.io/musistat)!
+> View [here](https://reallukee.github.io/musistat)!
 
 <br />
 
@@ -12,7 +12,6 @@
 
 # Features
 
-* Me
 * Top Tracks
 * Top Artists
 
@@ -34,4 +33,3 @@
 # License
 
 [MIT](./LICENSE) License
-

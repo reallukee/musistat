@@ -38,12 +38,6 @@
       <div id="navbar" class="collapse navbar-collapse mt-3 mt-lg-0">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="./me.html" id="navbarMe" class="nav-link">
-              Me
-            </a>
-          </li>
-
-          <li class="nav-item">
             <a href="./tracks.html" id="navbarTracks" class="nav-link active">
               Top Tracks
             </a>
@@ -58,13 +52,13 @@
 
         <div class="mx-auto"></div>
 
-        <div class="d-flex">
-          <button type="button" id="login" class="btn btn-success mt-3 mt-lg-0">
-            Login
+        <div class="d-flex mt-3 mt-lg-0">
+          <button type="button" id="login" class="btn btn-success">
+            Login with Spotify <i class="bi bi-spotify ms-1"></i>
           </button>
 
-          <button type="button" id="logout" class="btn btn-danger mt-3 mt-lg-0">
-            Logout
+          <button type="button" id="logout" class="btn btn-danger">
+            Logout from Spotify <i class="bi bi-spotify ms-1"></i>
           </button>
         </div>
       </div>
@@ -145,6 +139,24 @@
       </div>
     </div>
 
+    <div class="my-5"></div>
+
+    <div class="col">
+      <div class="row gx-3 gy-3">
+        <div class="col-auto">
+          <button type="button" class="btn btn-success" id="more">
+            More Tracks!
+          </button>
+        </div>
+
+        <div class="col-auto">
+          <a href="#options" class="btn btn-outline-secondary">
+            Top
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!--
       ERROR TEMPLATE BEGIN
     -->
@@ -175,7 +187,7 @@
 
             <div class="col-12 col-lg-auto">
               <h3 class="fs-3 font-monospace m-0 p-0">
-                <%= (i + 1).toString().padStart(2, "0") + "."; %>
+                <%= (++offset).toString().padStart(2, "0") + "."; %>
               </h3>
             </div>
 
@@ -213,19 +225,13 @@
 
             <div class="col-12 col-lg-auto">
               <a href="<%= track.external_urls.spotify; %>" class="btn btn-success" target="_blank">
-                Spotify
+                Spotify <i class="bi bi-spotify ms-1"></i>
               </a>
             </div>
 
           </div>
         </div>
       <% } %>
-
-      <div class="col">
-        <a href="#options" class="btn btn-outline-secondary">
-          Top
-        </a>
-      </div>
     </script>
     <!--
       TRACKS TEMPLATE END
@@ -270,7 +276,7 @@
         <div class="row justify-content-center gx-3 gy-5 gx-lg-5 gy-lg-5">
           <div class="col-auto">
             <button type="button" id="homeLogin" class="btn btn-lg btn-success">
-              Login with Spotify now!
+              Login with Spotify <i class="bi bi-spotify ms-1"></i>
             </button>
           </div>
         </div>
@@ -287,7 +293,7 @@
   -->
   <footer class="bg-body-tertiary mt-auto mb-0 py-3">
     <div class="container col-12 col-lg-8 my-auto py-auto">
-      <div class="row g-3">
+      <div class="row gx-3 gy-3">
 
         <div class="col-12 col-lg-auto">
           <a href="./" class="link-success">

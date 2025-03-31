@@ -27,11 +27,23 @@
         }
 
         document.querySelector("#timeRange").addEventListener("change", async () => {
+            offset = 0;
+
             await showContent();
         });
 
         document.querySelector("#limit").addEventListener("change", async () => {
+            offset = 0;
+
             await showContent();
+        });
+
+        document.querySelector("#more").addEventListener("click", async () => {
+            const limit = document.querySelector("#limit").value;
+
+            offset += parseInt(limit);
+
+            await extendContent();
         });
     });
 
@@ -49,10 +61,26 @@
 
         const data = {
             tracks: response,
+            offset,
         };
 
         document.querySelector("#pageContent").innerHTML = ejs.render(template, data);
     }
+
+    async function extendContent() {
+        const response = await getContent();
+
+        const template = document.querySelector("#pageContentTemplate").innerHTML;
+
+        const data = {
+            tracks: response,
+            offset,
+        };
+
+        document.querySelector("#pageContent").innerHTML += ejs.render(template, data);
+    }
+
+    let offset = 0;
 
     async function getContent() {
         const accessToken = AccessToken.get();
@@ -60,7 +88,7 @@
         const timeRange = document.querySelector("#timeRange").value;
         const limit = document.querySelector("#limit").value;
 
-        const endpoint = `https://api.spotify.com/v1/me/top/tracks?time_range=${timeRange}&limit=${limit}`;
+        const endpoint = `https://api.spotify.com/v1/me/top/tracks?time_range=${timeRange}&limit=${limit}&offset=${offset}`;
 
         const options = {
             method: "GET",

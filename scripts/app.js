@@ -61,6 +61,20 @@
         },
     };
 
+    const IssuedAt = {
+        get: () => {
+            return localStorage.getItem("musiStat.issuedAt") ?? null;
+        },
+
+        set: (value) => {
+            localStorage.setItem("musiStat.issuedAt", value);
+        },
+
+        delete: () => {
+            localStorage.removeItem("musiStat.issuedAt");
+        },
+    };
+
     const ExpiresAt = {
         get: () => {
             return localStorage.getItem("musiStat.expiresAt") ?? null;
@@ -205,6 +219,7 @@
         const expiresIn = response.expires_in;
         const expiresAt = issuedAt + expiresIn;
 
+        IssuedAt.set(issuedAt);
         ExpiresAt.set(expiresAt);
     }
 
@@ -247,6 +262,7 @@
         const expiresIn = response.expires_in;
         const expiresAt = issuedAt + expiresIn;
 
+        IssuedAt.set(issuedAt);
         ExpiresAt.set(expiresAt);
     }
 
@@ -273,6 +289,7 @@
         AccessToken.delete();
         RefreshToken.delete();
         ExpiresIn.delete();
+        IssuedAt.delete();
         ExpiresAt.delete();
 
         location.href = "./";
