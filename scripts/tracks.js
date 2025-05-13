@@ -107,6 +107,8 @@
             })
             .catch((error) => {
                 console.error(error);
+
+                window.location.href = "error.html";
             });
 
         return response.items;
@@ -134,6 +136,8 @@
             })
             .catch((error) => {
                 console.error(error);
+
+                window.location.href = "error.html";
             });
 
         return response;

@@ -1,7 +1,12 @@
 (async () => {
     const clientId = "b3d2926223b94540b6901c8da180079e";
+
     const redirectUri = "https://reallukee.github.io/musistat";
-    const scope = "user-read-private user-read-email user-top-read";
+
+    const scope =
+        `user-read-private
+        user-read-email
+        user-top-read`;
 
 
 
@@ -283,6 +288,8 @@
             login();
         }
     });
+
+
 
     async function logout() {
         CodeVerifier.delete();

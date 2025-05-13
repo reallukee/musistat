@@ -1,0 +1,7 @@
+{
+  "name": "musistat",
+  "short_name": "musistat",
+  "start_url": "./",
+  "display": "standalone",
+  "icons": []
+}
